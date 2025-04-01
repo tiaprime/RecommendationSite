@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "F8wzAuehFXnYwVrpmjEQKKH0JRGyfIJR68zSkwDUYE8=",
+  "Source": "RecommendationSite.API",
+  "BasePath": "_content/RecommendationSite.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
