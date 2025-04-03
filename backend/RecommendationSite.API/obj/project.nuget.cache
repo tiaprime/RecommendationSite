@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yf1zuA+Jb5E=",
+  "dgSpecHash": "9Qsc8ie9zzk=",
   "success": true,
   "projectFilePath": "/Users/amy/Desktop/455/RecommendationSite/backend/RecommendationSite.API/RecommendationSite.API.csproj",
   "expectedPackageFiles": [
+    "/Users/amy/.nuget/packages/csvhelper/33.0.1/csvhelper.33.0.1.nupkg.sha512",
     "/Users/amy/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/amy/.nuget/packages/microsoft.ml/4.0.2/microsoft.ml.4.0.2.nupkg.sha512",
     "/Users/amy/.nuget/packages/microsoft.ml.cpumath/4.0.2/microsoft.ml.cpumath.4.0.2.nupkg.sha512",

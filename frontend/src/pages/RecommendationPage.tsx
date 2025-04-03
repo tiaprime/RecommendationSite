@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function RecommendationPage() {
-  // State to store the user or item ID input
-  const [inputId, setInputId] = useState('');
+  // State to store the list of item IDs from the backend
+  const [itemIds, setItemIds] = useState([]);
 
-  // State to determine whether the input is for a user or an item
-  const [idType, setIdType] = useState('user'); // Can be 'user' or 'item'
+  // State to store the selected item ID
+  const [selectedItemId, setSelectedItemId] = useState('');
 
   // State to store recommendation results from different models
   const [recommendations, setRecommendations] = useState({
@@ -14,17 +14,35 @@ function RecommendationPage() {
     azureML: [], // Azure ML model results
   });
 
-  // State to manage loading status while fetching recommendations
+  // State to manage loading status while fetching recommendations or item IDs
   const [loading, setLoading] = useState(false);
 
   // State to store and display errors
   const [error, setError] = useState('');
 
-  // Function to fetch recommendations based on input ID and selected ID type
+  // Fetch itemIds from the backend when the component mounts
+  useEffect(() => {
+    const fetchItemIds = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/itemIds');
+        if (!response.ok) {
+          throw new Error('Failed to fetch item IDs.');
+        }
+        const data = await response.json();
+        setItemIds(data);
+      } catch (err) {
+        setError('An error occurred while fetching item IDs.');
+      }
+    };
+
+    fetchItemIds();
+  }, []);
+
+  // Function to fetch recommendations based on the selected item ID
   const handleFetchRecommendations = async () => {
-    // Ensure an ID is provided before making the request
-    if (!inputId) {
-      setError('Please enter a valid ID.');
+    // Ensure an item ID is selected before making the request
+    if (!selectedItemId) {
+      setError('Please select a valid Item ID.');
       return;
     }
 
@@ -33,9 +51,9 @@ function RecommendationPage() {
     setError('');
 
     try {
-      // Fetch recommendations from the backend API
+      // Fetch recommendations from the backend API using the selected itemId
       const response = await fetch(
-        `http://localhost:5000/api/recommendations?${idType}Id=${inputId}`
+        `http://localhost:5000/api/recommendations/itemId=${selectedItemId}`
       );
 
       // Throw an error if the request was unsuccessful
@@ -54,9 +72,7 @@ function RecommendationPage() {
       });
     } catch (err) {
       // Capture and display any errors that occur
-      setError(
-        err instanceof Error ? err.message : 'An unknown error occurred.'
-      );
+      setError(err instanceof Error ? err.message : 'An unknown error occurred.');
     } finally {
       // Reset loading state after the request is complete
       setLoading(false);
@@ -67,24 +83,23 @@ function RecommendationPage() {
     <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
       <h2>News Article Recommender</h2>
 
-      {/* Dropdown to select between User ID and Item ID */}
+      {/* Dropdown to select Item ID */}
       <div>
         <label>
-          Select ID Type and Number:
+          Select Item ID:
           <br />
-          <select value={idType} onChange={(e) => setIdType(e.target.value)}>
-            <option value="user">User ID</option>
-            <option value="item">Item ID</option>
+          <select
+            value={selectedItemId}
+            onChange={(e) => setSelectedItemId(e.target.value)}
+          >
+            <option value="">Select an Item</option>
+            {itemIds.map((itemId) => (
+              <option key={itemId} value={itemId}>
+                {itemId}
+              </option>
+            ))}
           </select>
         </label>
-
-        {/* Input field to enter User ID or Item ID */}
-        <input
-          type="text"
-          placeholder={`Enter ${idType} ID`}
-          value={inputId}
-          onChange={(e) => setInputId(e.target.value)}
-        />
       </div>
       <br />
 
