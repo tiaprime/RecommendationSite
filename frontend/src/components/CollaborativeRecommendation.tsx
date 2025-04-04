@@ -28,7 +28,8 @@ function CollaborativeRecommendation({ itemId }: { itemId: string }) {
 
   return (
     <div className="p-4 border rounded shadow mt-4 text-left">
-      <h3 className="font-bold text-lg mb-2">Collaborative Recommendations for {recommendation.articleTitle}</h3>
+      <h3 className="font-bold text-3xl mb-2">{recommendation.articleTitle}</h3>
+      <h3 className="font-bold text-lg mb-2">Collaborative Recommendations: </h3>
       <ul style={{ textAlign: 'left' }}>
         <li>{recommendation.recommendation1}</li>
         <li>{recommendation.recommendation2}</li>
