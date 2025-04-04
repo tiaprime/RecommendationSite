@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/amy/Desktop/455/RecommendationSite/backend/RecommendationSite.API/RecommendationSite.API.csproj": {}
+    "C:\\Users\\matti\\OneDrive\\Desktop\\spring2025\\Keith\\RecSite\\RecommendationSite\\backend\\RecommendationSite.API\\RecommendationSite.API.csproj": {}
   },
   "projects": {
-    "/Users/amy/Desktop/455/RecommendationSite/backend/RecommendationSite.API/RecommendationSite.API.csproj": {
+    "C:\\Users\\matti\\OneDrive\\Desktop\\spring2025\\Keith\\RecSite\\RecommendationSite\\backend\\RecommendationSite.API\\RecommendationSite.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/amy/Desktop/455/RecommendationSite/backend/RecommendationSite.API/RecommendationSite.API.csproj",
+        "projectUniqueName": "C:\\Users\\matti\\OneDrive\\Desktop\\spring2025\\Keith\\RecSite\\RecommendationSite\\backend\\RecommendationSite.API\\RecommendationSite.API.csproj",
         "projectName": "RecommendationSite.API",
-        "projectPath": "/Users/amy/Desktop/455/RecommendationSite/backend/RecommendationSite.API/RecommendationSite.API.csproj",
-        "packagesPath": "/Users/amy/.nuget/packages/",
-        "outputPath": "/Users/amy/Desktop/455/RecommendationSite/backend/RecommendationSite.API/obj/",
+        "projectPath": "C:\\Users\\matti\\OneDrive\\Desktop\\spring2025\\Keith\\RecSite\\RecommendationSite\\backend\\RecommendationSite.API\\RecommendationSite.API.csproj",
+        "packagesPath": "C:\\Users\\matti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\matti\\OneDrive\\Desktop\\spring2025\\Keith\\RecSite\\RecommendationSite\\backend\\RecommendationSite.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/amy/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\matti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -75,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
