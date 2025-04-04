@@ -1,12 +1,12 @@
-namespace DefaultNamespace;
+namespace RecommendationSite.API.Data;
 
 public class CollaborativeRecommendation
 {
-    public int ArticleId {get; set;}
+    public string ArticleId {get; set;}
     public string ArticleTitle {get; set;}
-    public string Recommendation_1 {get; set;}
-    ublic string Recommendation_2 {get; set;}
-    ublic string Recommendation_3 {get; set;}
-    ublic string Recommendation_4 {get; set;}
-    ublic string Recommendation_5 {get; set;}
+    public string Recommendation1 {get; set;}
+    public string Recommendation2 {get; set;}
+    public string Recommendation3 {get; set;}
+    public string Recommendation4 {get; set;}
+    public string Recommendation5 {get; set;}
 }
